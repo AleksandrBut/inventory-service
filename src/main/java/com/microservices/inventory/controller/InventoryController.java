@@ -44,4 +44,10 @@ public class InventoryController {
         return ResponseEntity.ok()
                 .build();
     }
+
+    @GetMapping("/stock")
+    public ResponseEntity<Boolean> isInStock(@RequestParam String skuCode,
+                                             @RequestParam Integer quantity) {
+        return ResponseEntity.ok(inventoryService.isInStock(skuCode, quantity));
+    }
 }

@@ -4,4 +4,6 @@ import com.microservices.inventory.model.Inventory;
 import org.springframework.data.repository.CrudRepository;
 
 public interface InventoryRepository extends CrudRepository<Inventory, Long> {
+
+    boolean existsBySkuCodeAndQuantityIsGreaterThanEqual(String skuCode, Integer quantity);
 }

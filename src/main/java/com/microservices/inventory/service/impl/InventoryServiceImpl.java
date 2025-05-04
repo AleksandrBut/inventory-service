@@ -52,4 +52,9 @@ public class InventoryServiceImpl implements InventoryService {
     public void deleteInventory(Long id) {
         inventoryRepository.deleteById(id);
     }
+
+    @Override
+    public boolean isInStock(String skuCode, Integer quantity) {
+        return inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEqual(skuCode, quantity);
+    }
 }

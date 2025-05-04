@@ -15,4 +15,6 @@ public interface InventoryService {
     List<InventoryDto> getInventories();
 
     void deleteInventory(Long id);
+
+    boolean isInStock(String skuCode, Integer quantity);
 }
